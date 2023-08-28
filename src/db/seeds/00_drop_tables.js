@@ -5,5 +5,6 @@ module.exports.seed = function (knex) {
     .then(() => knex("movies_theaters").del())
     .then(() => knex("critics").del())
     .then(() => knex("movies").del())
-    .then(() => knex("theaters").del());
+    .then(() => knex("theaters").del())
+    .then(() => knex("reviews").del());
 };
