@@ -5,6 +5,21 @@ function list() {
     .select("*")
 }
 
+function read(movieId) {
+    /*
+    SELECT *
+    FROM movies m
+    WHERE m.movie_id = movieId
+    */
+   return knex("movies")
+   .select("*")
+   .where({
+    movie_id: movieId
+   })
+   .first()
+}
+
 module.exports = {
-    list
+    list,
+    read
 }
