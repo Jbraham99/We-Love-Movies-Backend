@@ -5,9 +5,10 @@ exports.up = function(knex) {
     table.string("preferred_name");
     table.string("surname");
     table.string("organization_name")
+    table.timestamps(true, true)
   })
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable("theatres");
+  return knex.schema.dropTable("critics");
 };

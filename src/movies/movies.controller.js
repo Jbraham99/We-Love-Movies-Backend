@@ -1,4 +1,5 @@
 const service = require("./movies.service")
+const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
 async function list(req, res) {
     const response = await service.list()
@@ -9,6 +10,7 @@ async function movieExists(req, res, next) {
     const {movieId} = req.params;
     const movieIdNumber = Number(movieId);
     const movie = await service.read(movieIdNumber);
+    // console.log("*MOVIE*", movie)
     if (movie) {
         res.locals.movie = movie;
         return next()
@@ -28,5 +30,6 @@ module.exports = {
     read: [
         movieExists,
         read
-    ]
+    ],
+    movieExists
 }

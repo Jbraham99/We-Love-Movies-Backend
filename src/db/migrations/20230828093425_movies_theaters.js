@@ -5,7 +5,7 @@ exports.up = function(knex) {
     table.foreign("movie_id").references("movies.movie_id");
     table.integer("theater_id").unsigned()
     table.foreign("theater_id").references("theaters.theater_id");
-    table.boolean("is_showing").notNullable();
+    table.boolean("is_showing").defaultTo(false);
   })
 };
 

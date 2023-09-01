@@ -167,7 +167,7 @@ const reduceMovies = reduceProperties("theater_id", {
   rating: ["movies", null, "rating"],
 });
 
-console.log(JSON.stringify(reduceMovies(data), null, 4));
+console.log("%%%%%%",JSON.stringify(reduceMovies(data), null, 4));
 ```
 
 Will print out the following:
@@ -206,7 +206,7 @@ const reduceTheaterAndMovies = reduceProperties("theater_id", {
   rating: ["movies", null, "rating"],
 });
 
-console.log(JSON.stringify(reduceTheaterAndMovies(data), null, 4));
+console.log("*****",JSON.stringify(reduceTheaterAndMovies(data), null, 4));
 ```
 
 Will print out the following:

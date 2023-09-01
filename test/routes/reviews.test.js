@@ -61,6 +61,7 @@ describe("Review Routes", () => {
   describe("DELETE /reviews/:reviewId", () => {
     test("should return a 404 if the ID given does not match any ID in the database", async () => {
       const response = await request(app).delete("/reviews/9999", {});
+      console.log("&^&^&^", response.body)
       expect(response.body.error).toBeDefined();
       expect(response.statusCode).toBe(404);
     });
